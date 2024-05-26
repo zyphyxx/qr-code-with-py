@@ -27,7 +27,7 @@ Este projeto é um gerador de QR Code simples desenvolvido em Python, utilizando
 1. Clone este repositório:
 
    ```sh
-   git clone https://github.com/seu-usuario/qrcode-generator.git
+   git@github.com:zyphyxx/qr-code-with-py.git
    cd qrcode-generator
    ```
 
