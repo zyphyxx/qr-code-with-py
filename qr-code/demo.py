@@ -1,8 +1,11 @@
 from tkinter import *
+
+import png
 import pyqrcode
 from PIL import ImageTk, Image
 
 root = Tk()
+root.title("QR Code Generator")
 
 
 def generate():
@@ -10,11 +13,11 @@ def generate():
     link = link_entry.get()
     file_name = link_name + ".png"
     url = pyqrcode.create(link)
-    url.png(file_name, scale=8)
+    url.png(file_name, scale=5)
     image = ImageTk.PhotoImage(Image.open(file_name))
     image_label = Label(image=image)
     image_label.image = image
-    canvas.create_window(200, 400, window=image_label)
+    canvas.create_window(200, 370, window=image_label)
 
 
 canvas = Canvas(root, width=400, height=600)
@@ -34,6 +37,9 @@ canvas.create_window(200, 130, window=name_entry)
 canvas.create_window(200, 180, window=link_entry)
 
 button = Button(text="Generate QR code", command=generate)
-canvas.create_window(200, 230, window=button)
+canvas.create_window(140, 230, window=button)
+
+clear = Button(text="Clear QR code")
+canvas.create_window(250, 230, window=clear)
 
 root.mainloop()
